@@ -1,0 +1,25 @@
+{
+  "name": "perf-measure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "chrome-launcher": "node ./src/chrome-launcher.js",
+    "puppeteer": "node ./src/puppeteer.js",
+    "lighthouse": "cross-env CHROME_PATH=\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" lighthouse https://fluentuipr.z22.web.core.windows.net/pull/27415/react-charting/demo/index.html#/examples/linecharttwo --output html --output-path ./reports/lh-report.html --config-path ./node_modules/lighthouse/core/config/lr-desktop-config.js --chrome-flags=\"--headless\" --only-categories=performance",
+    "start:all": "npm run puppeteer && npm run chrome-launcher && npm run lighthouse"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-launcher": "^0.15.2",
+    "lighthouse": "^10.1.1",
+    "puppeteer": "^20.1.2"
+  },
+  "type": "module",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "private": true
+}
